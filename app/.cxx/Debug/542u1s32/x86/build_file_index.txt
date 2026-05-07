@@ -1,0 +1,1 @@
+C:\Users\student\Documents\2026Take\app\src\main\cpp\CMakeLists.txt
