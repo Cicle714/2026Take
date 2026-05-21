@@ -1,4 +1,18 @@
 #include "DxLib.h"
+#include "main.h"
+#include "Enemys.h"
+
+#include <vector>
+#include <list>
+
+
+int ObjectSize = 128;
+
+int ScreenW = 720;
+int ScreenH = 1280;
+
+std::list<Enemys*> Enes;
+
 
 struct Rect{
     int x;
@@ -93,8 +107,58 @@ void DrawUILayout(const UILayout& layout){
     DrawUIRect(layout.center,"Center",GetColor(180,80,120));
 }
 
+
+void PlayerObject(VECTOR PosP){
+
+    DrawBox(PosP.x - ObjectSize / 2,PosP.y + - ObjectSize / 2,PosP.x + ObjectSize/2,PosP.y +ObjectSize/2, GetColor(0,255,0),true);
+}
+
+VECTOR EPos;
+
+
+VECTOR EPos1 = VGet(ScreenW/4,-ObjectSize,0);
+VECTOR EPos2 = VGet(ScreenW/2,-ObjectSize,0);
+VECTOR EPos3 = VGet((ScreenW * 3)/4,-ObjectSize,0);
+
+int SpawnTime = 120;
+int SpawnCount = 0;
+
+void EnemySpawn(){
+
+    SpawnCount++;
+    if(SpawnCount >= SpawnTime) {
+
+        Enemys* ene;
+        ene = new Enemys();
+        SpawnCount = 0;
+
+        int tmp = GetRand(2);
+        int EposX = SRand(tmp);
+
+        switch (EposX) {
+            case 0:
+                ene->Pos = EPos1;
+                break;
+            case 1:
+                ene->Pos = EPos2;
+                break;
+            case 2:
+                ene->Pos = EPos3;
+
+        }
+
+        Enes.push_back(ene);
+
+        for(int i = 0;i < Enes.size();i++){
+            Enes[i]->pos.y+= 60;
+            DrawBox(Enes[i]->Pos.x - ObjectSize / 2, Enes[i]->Pos.y + -ObjectSize / 2, Enes[i]->Pos.x + ObjectSize / 2,
+                Enes[i]->Pos.y + ObjectSize / 2, GetColor(255, 0, 0), true);
+    }}
+}
+
 int android_main()
 {
+
 
     SetGraphMode(720,1280,32);
 
@@ -105,18 +169,35 @@ int android_main()
 
     SetDrawScreen(DX_SCREEN_BACK);
 
+    int PPosY = 1200;
+
+
+    VECTOR PPos1 = VGet(ScreenW/4,PPosY,0);
+    VECTOR PPos2 = VGet(ScreenW/2,PPosY,0);
+    VECTOR PPos3 = VGet((ScreenW * 3)/4,PPosY,0);
+
+    int touchPX = 0;
+    int touchPY = 0;
+
+
+
     while(ProcessMessage() == 0) {
         ClearDrawScreen();
-        int ScreenW = 720;
-        int ScreenH = 1280;
+
+        GetTouchInput(0, &touchPX, &touchPY) ;
+
+        if(touchPX <= ScreenW/3)
+        PlayerObject(PPos1);
+        else if(touchPX <= (ScreenW * 2) / 3)
+            PlayerObject(PPos2);
+        else PlayerObject(PPos3);
 
 
-        UILayout layout = CreateLayout(ScreenW,ScreenH);
-        DrawUILayout(layout);
+        EnemySpawn();
 
-        DrawString(20, 1240, "Android UI Layout Sample", GetColor(0, 255, 255), TRUE);
 
         ScreenFlip();
+
     }
 
 
@@ -124,3 +205,5 @@ int android_main()
 
     return 0 ;					// ソフトの終了
 }
+
+

@@ -1,5 +1,13 @@
 # ninja log v5
-0	81	7998507463011118	CMakeFiles/native-lib.dir/native-lib.cpp.o	da0828db74f7fc17
-82	220	7998507464128637	C:/Users/student/Documents/2026Take/app/build/intermediates/cxx/Debug/542u1s32/obj/armeabi-v7a/libnative-lib.so	643875966b0ad7c4
-0	198	7998536351603661	CMakeFiles/native-lib.dir/main.cpp.o	86a848a006004c79
-199	448	7998536353815184	C:/Users/student/Documents/2026Take/app/build/intermediates/cxx/Debug/542u1s32/obj/armeabi-v7a/libnative-lib.so	dfea7c079f164b3b
+1	122	8010571504213349	CMakeFiles/native-lib.dir/main.cpp.o	86a848a006004c79
+122	336	8010571506096393	C:/Users/student/Documents/2026Take/app/build/intermediates/cxx/Debug/542u1s32/obj/armeabi-v7a/libnative-lib.so	dfea7c079f164b3b
+1	88	8010573884090442	CMakeFiles/native-lib.dir/main.cpp.o	86a848a006004c79
+88	237	8010573885345024	C:/Users/student/Documents/2026Take/app/build/intermediates/cxx/Debug/542u1s32/obj/armeabi-v7a/libnative-lib.so	dfea7c079f164b3b
+1	85	8010583121222639	CMakeFiles/native-lib.dir/main.cpp.o	86a848a006004c79
+85	225	8010583122399592	C:/Users/student/Documents/2026Take/app/build/intermediates/cxx/Debug/542u1s32/obj/armeabi-v7a/libnative-lib.so	dfea7c079f164b3b
+4	125	8010605730851811	CMakeFiles/native-lib.dir/main.cpp.o	86a848a006004c79
+126	366	8010605732991791	C:/Users/student/Documents/2026Take/app/build/intermediates/cxx/Debug/542u1s32/obj/armeabi-v7a/libnative-lib.so	dfea7c079f164b3b
+1	100	8010614860592524	CMakeFiles/native-lib.dir/main.cpp.o	86a848a006004c79
+100	253	8010614861868829	C:/Users/student/Documents/2026Take/app/build/intermediates/cxx/Debug/542u1s32/obj/armeabi-v7a/libnative-lib.so	dfea7c079f164b3b
+1	90	8010615459456330	CMakeFiles/native-lib.dir/main.cpp.o	86a848a006004c79
+91	231	8010615460616228	C:/Users/student/Documents/2026Take/app/build/intermediates/cxx/Debug/542u1s32/obj/armeabi-v7a/libnative-lib.so	dfea7c079f164b3b

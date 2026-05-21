@@ -11,7 +11,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "x86"
+			"value" : "arm64-v8a"
 		},
 		{
 			"name" : "ANDROID_NDK",
@@ -63,7 +63,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "x86"
+			"value" : "arm64-v8a"
 		},
 		{
 			"name" : "CMAKE_ANDROID_NDK",
@@ -151,7 +151,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/student/Documents/2026Take/app/.cxx/Debug/542u1s32/x86"
+			"value" : "c:/Users/student/Documents/2026Take/app/.cxx/Debug/542u1s32/arm64-v8a"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -683,7 +683,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/smartphone2026_2"
+			"value" : "C:/Program Files (x86)/SmartPhone2026_2"
 		},
 		{
 			"name" : "CMAKE_INSTALL_SO_NO_EXE",
@@ -707,7 +707,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "C:\\Users\\student\\Documents\\2026Take\\app\\build\\intermediates\\cxx\\Debug\\542u1s32\\obj\\x86"
+			"value" : "C:\\Users\\student\\Documents\\2026Take\\app\\build\\intermediates\\cxx\\Debug\\542u1s32\\obj\\arm64-v8a"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -923,7 +923,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "test"
+			"value" : "SmartPhone2026_2"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -979,7 +979,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "C:\\Users\\student\\Documents\\2026Take\\app\\build\\intermediates\\cxx\\Debug\\542u1s32\\obj\\x86"
+			"value" : "C:\\Users\\student\\Documents\\2026Take\\app\\build\\intermediates\\cxx\\Debug\\542u1s32\\obj\\arm64-v8a"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1219,11 +1219,11 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "The CMake toolchain file"
 				}
 			],
-			"type" : "UNINITIALIZED",
-			"value" : "C:\\Users\\student\\AppData\\Local\\Android\\Sdk\\ndk\\28.2.13676358\\build\\cmake\\android.toolchain.cmake"
+			"type" : "FILEPATH",
+			"value" : "C:/Users/student/AppData/Local/Android/Sdk/ndk/28.2.13676358/build/cmake/android.toolchain.cmake"
 		},
 		{
 			"name" : "CMAKE_VERBOSE_MAKEFILE",
@@ -1242,6 +1242,42 @@
 			"value" : "FALSE"
 		},
 		{
+			"name" : "SmartPhone2026_2_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/student/Documents/2026Take/app/.cxx/Debug/542u1s32/arm64-v8a"
+		},
+		{
+			"name" : "SmartPhone2026_2_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "SmartPhone2026_2_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/student/Documents/2026Take/app/src/main/cpp"
+		},
+		{
 			"name" : "log-lib",
 			"properties" : 
 			[
@@ -1251,79 +1287,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/student/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/26/liblog.so"
-		},
-		{
-			"name" : "smartphone2026_2_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "C:/Users/student/Documents/2026Take/app/.cxx/Debug/542u1s32/x86"
-		},
-		{
-			"name" : "smartphone2026_2_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "smartphone2026_2_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "C:/Users/student/Documents/2026Take/app/src/main/cpp"
-		},
-		{
-			"name" : "test_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "C:/Users/student/Documents/2026Take/app/.cxx/Debug/542u1s32/x86"
-		},
-		{
-			"name" : "test_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "test_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "C:/Users/student/Documents/2026Take/app/src/main/cpp"
+			"value" : "C:/Users/student/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/aarch64-linux-android/26/liblog.so"
 		}
 	],
 	"kind" : "cache",

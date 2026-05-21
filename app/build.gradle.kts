@@ -45,8 +45,10 @@ android {
 }
 
 dependencies {
-    implementation(libs.appcompat)
+
+    implementation("androidx.appcompat:appcompat:1.5.1")
     implementation(libs.constraintlayout)
+    implementation("androidx.startup:startup-runtime:1.1.1")
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.espresso.core)

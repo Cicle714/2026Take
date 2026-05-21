@@ -10,7 +10,7 @@ cmake_minimum_required(VERSION 3.18.1)
 include_directories(C:/Users/student/Documents/2026Take/DxLib_Android/Lib_AndroidStudio/${ANDROID_ABI} )
 link_directories(C:/Users/student/Documents/2026Take/DxLib_Android/Lib_AndroidStudio/${ANDROID_ABI} )
 
-project("test")
+project("SmartPhone2026_2")
 
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.

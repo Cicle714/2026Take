@@ -7,7 +7,8 @@
 
 
 class main {
-
+public:
+    VECTOR PPos;
 };
 
-#endif //SMARTPHONE2026_2_MAIN_H
+#endif SMARTPHONE2026_2_MAIN_H

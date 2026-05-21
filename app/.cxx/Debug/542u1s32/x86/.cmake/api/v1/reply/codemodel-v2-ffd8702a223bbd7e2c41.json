@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "test",
+					"name" : "SmartPhone2026_2",
 					"targetIndexes" : 
 					[
 						0
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "native-lib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-native-lib-Debug-75f2b547ec8a58cab5d1.json",
+					"jsonFile" : "target-native-lib-Debug-cb9f89f8c1d51fd0da8f.json",
 					"name" : "native-lib",
 					"projectIndex" : 0
 				}
@@ -49,7 +49,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/student/Documents/2026Take/app/.cxx/Debug/542u1s32/arm64-v8a",
+		"build" : "C:/Users/student/Documents/2026Take/app/.cxx/Debug/542u1s32/x86",
 		"source" : "C:/Users/student/Documents/2026Take/app/src/main/cpp"
 	},
 	"version" : 
