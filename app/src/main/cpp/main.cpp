@@ -118,13 +118,15 @@ int ColorBlue = GetColor(0,0,255);
 bool ScreenTouch = false;
 bool PlayerTouch = false;
 
+VECTOR Force;
+
 void PlayerObject(VECTOR PosP){
 
     int touchPX = 0;
     int touchPY = 0;
 
     VECTOR MoveForce;
-    float MaxForce = 50;
+    float MoveSpeed = 0.01f;
 
     GetTouchInput(0, &touchPX, &touchPY);
     if(touchPY != 0 || touchPX != 0){
@@ -134,23 +136,18 @@ void PlayerObject(VECTOR PosP){
         PlayerTouch = true;
         }
         if(PlayerTouch){
-            MoveForce =VGet( PosP.x-touchPX, PosP.y - touchPY,0);
+            MoveForce =VGet(touchPX - PosP.x, touchPY - PosP.y,0);
         }
 
         ScreenTouch = true;
     }else{
         ScreenTouch = false;
         PlayerTouch = false;
+        float length = VSize(MoveForce);
+        MoveForce.x /= length / 10;
+        MoveForce.y /= length / 10;
 
-        if(MoveForce.x >= MaxForce){
-            MoveForce.x = MaxForce;
-        }
-        if(MoveForce.y >= MaxForce){
-            MoveForce.y = MaxForce;
-        }
 
-        MoveForce.x *= 0.95f;
-        MoveForce.y *= 0.95f;
         PlayerColor = ColorRed;
 
     }
