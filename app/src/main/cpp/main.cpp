@@ -1,3 +1,4 @@
+
 #include "DxLib.h"
 #include "main.h"
 #include "Enemys.h"
@@ -107,54 +108,77 @@ void DrawUILayout(const UILayout& layout){
     DrawUIRect(layout.center,"Center",GetColor(180,80,120));
 }
 
+VECTOR PlayerPos = VGet(ScreenW/2,1200,0);
+
+int PlayerColor = GetColor(0,0,255);;
+int ColorRed = GetColor(255,0,0);
+int ColorGreen = GetColor(0,255,0);
+int ColorBlue = GetColor(0,0,255);
+
+bool ScreenTouch = false;
+bool PlayerTouch = false;
 
 void PlayerObject(VECTOR PosP){
 
-    DrawBox(PosP.x - ObjectSize / 2,PosP.y + - ObjectSize / 2,PosP.x + ObjectSize/2,PosP.y +ObjectSize/2, GetColor(0,255,0),true);
+    int touchPX = 0;
+    int touchPY = 0;
+
+    VECTOR MoveForce;
+    float MaxForce = 50;
+
+    GetTouchInput(0, &touchPX, &touchPY);
+    if(touchPY != 0 || touchPX != 0){
+        if(PosP.x - ObjectSize / 2 < touchPX && PosP.x + ObjectSize/2 > touchPX &&
+              PosP.y - ObjectSize / 2 < touchPY && PosP.y + ObjectSize / 2 > touchPY && !ScreenTouch){
+        PlayerColor = ColorGreen;
+        PlayerTouch = true;
+        }
+        if(PlayerTouch){
+            MoveForce =VGet( PosP.x-touchPX, PosP.y - touchPY,0);
+        }
+
+        ScreenTouch = true;
+    }else{
+        ScreenTouch = false;
+        PlayerTouch = false;
+
+        if(MoveForce.x >= MaxForce){
+            MoveForce.x = MaxForce;
+        }
+        if(MoveForce.y >= MaxForce){
+            MoveForce.y = MaxForce;
+        }
+
+        MoveForce.x *= 0.95f;
+        MoveForce.y *= 0.95f;
+        PlayerColor = ColorRed;
+
+    }
+    if(!PlayerTouch)
+    PlayerPos = VGet(MoveForce.x + PlayerPos.x,MoveForce.y + PlayerPos.y,0);
+    if(PlayerPos.x <= 0 || PlayerPos.x >= ScreenW){
+        if(PlayerPos.x <= 0)
+            PlayerPos.x = 0;
+        else
+            PlayerPos.x = ScreenW;
+        MoveForce.x = -MoveForce.x;
+    }if(PlayerPos.y <= 0 || PlayerPos.y >= ScreenH){
+        if(PlayerPos.y <= 0)
+            PlayerPos.y = 0;
+        else
+            PlayerPos.y = ScreenH;
+        MoveForce.y = -MoveForce.y;
+    }
+
+    DrawBox(PosP.x - ObjectSize / 2,PosP.y - ObjectSize / 2,PosP.x + ObjectSize/2,PosP.y +ObjectSize/2, PlayerColor,true);
 }
 
-VECTOR EPos;
 
-
-VECTOR EPos1 = VGet(ScreenW/4,-ObjectSize,0);
-VECTOR EPos2 = VGet(ScreenW/2,-ObjectSize,0);
-VECTOR EPos3 = VGet((ScreenW * 3)/4,-ObjectSize,0);
 
 int SpawnTime = 120;
 int SpawnCount = 0;
 
-void EnemySpawn(){
 
-    SpawnCount++;
-    if(SpawnCount >= SpawnTime) {
-
-        Enemys* ene;
-        ene = new Enemys();
-        SpawnCount = 0;
-
-        int tmp = GetRand(2);
-        int EposX = SRand(tmp);
-
-        switch (EposX) {
-            case 0:
-                ene->Pos = EPos1;
-                break;
-            case 1:
-                ene->Pos = EPos2;
-                break;
-            case 2:
-                ene->Pos = EPos3;
-
-        }
-
-        Enes.push_back(ene);
-
-        for(int i = 0;i < Enes.size();i++){
-            Enes[i]->pos.y+= 60;
-            DrawBox(Enes[i]->Pos.x - ObjectSize / 2, Enes[i]->Pos.y + -ObjectSize / 2, Enes[i]->Pos.x + ObjectSize / 2,
-                Enes[i]->Pos.y + ObjectSize / 2, GetColor(255, 0, 0), true);
-    }}
-}
 
 int android_main()
 {
@@ -172,28 +196,15 @@ int android_main()
     int PPosY = 1200;
 
 
-    VECTOR PPos1 = VGet(ScreenW/4,PPosY,0);
-    VECTOR PPos2 = VGet(ScreenW/2,PPosY,0);
-    VECTOR PPos3 = VGet((ScreenW * 3)/4,PPosY,0);
 
-    int touchPX = 0;
-    int touchPY = 0;
 
 
 
     while(ProcessMessage() == 0) {
         ClearDrawScreen();
 
-        GetTouchInput(0, &touchPX, &touchPY) ;
 
-        if(touchPX <= ScreenW/3)
-        PlayerObject(PPos1);
-        else if(touchPX <= (ScreenW * 2) / 3)
-            PlayerObject(PPos2);
-        else PlayerObject(PPos3);
-
-
-        EnemySpawn();
+        PlayerObject(PlayerPos);
 
 
         ScreenFlip();
@@ -205,5 +216,4 @@ int android_main()
 
     return 0 ;					// ソフトの終了
 }
-
 

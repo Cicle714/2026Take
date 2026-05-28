@@ -1,6 +1,4 @@
-//
-// Created by student on 2026/05/21.
-//
+#include "DxLib.h"
 
 #ifndef SMARTPHONE2026_2_ENEMYS_H
 #define SMARTPHONE2026_2_ENEMYS_H
