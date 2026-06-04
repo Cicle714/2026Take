@@ -125,7 +125,7 @@ void PlayerObject(VECTOR PosP){
     int touchPX = 0;
     int touchPY = 0;
 
-    VECTOR MoveForce;
+    VECTOR MoveForce = VGet(0,0,0);
     float MoveSpeed = 0.01f;
 
     GetTouchInput(0, &touchPX, &touchPY);
@@ -137,6 +137,7 @@ void PlayerObject(VECTOR PosP){
         }
         if(PlayerTouch){
             MoveForce =VGet(touchPX - PosP.x, touchPY - PosP.y,0);
+            VNorm(MoveForce);
         }
 
         ScreenTouch = true;
@@ -144,30 +145,24 @@ void PlayerObject(VECTOR PosP){
         ScreenTouch = false;
         PlayerTouch = false;
         float length = VSize(MoveForce);
-        MoveForce.x /= length / 10;
-        MoveForce.y /= length / 10;
+
 
 
         PlayerColor = ColorRed;
 
-    }
-    if(!PlayerTouch)
-    PlayerPos = VGet(MoveForce.x + PlayerPos.x,MoveForce.y + PlayerPos.y,0);
-    if(PlayerPos.x <= 0 || PlayerPos.x >= ScreenW){
+    }if(PlayerPos.x <= 0 || PlayerPos.x >= ScreenW){
         if(PlayerPos.x <= 0)
             PlayerPos.x = 0;
         else
             PlayerPos.x = ScreenW;
         MoveForce.x = -MoveForce.x;
-    }if(PlayerPos.y <= 0 || PlayerPos.y >= ScreenH){
-        if(PlayerPos.y <= 0)
-            PlayerPos.y = 0;
-        else
-            PlayerPos.y = ScreenH;
-        MoveForce.y = -MoveForce.y;
     }
-
+    if(!PlayerTouch){
+    PlayerPos = VGet(MoveForce.x + PlayerPos.x,MoveForce.y + PlayerPos.y,0);
+    }
     DrawBox(PosP.x - ObjectSize / 2,PosP.y - ObjectSize / 2,PosP.x + ObjectSize/2,PosP.y +ObjectSize/2, PlayerColor,true);
+    DrawFormatString(0,0,GetColor(255,255,255),"x = %d  y = %d    %d",PosP.x,PosP.y,PlayerPos.y
+    );
 }
 
 
@@ -193,12 +188,21 @@ int android_main()
     int PPosY = 1200;
 
 
+    Enemys* enemys[2];
 
-
-
+    enemys[0] = new Enemys(VGet(0, 0, 0));
+    enemys[1] = new Enemys(VGet(200, 0, 0));
 
     while(ProcessMessage() == 0) {
         ClearDrawScreen();
+
+        SRand((int)time(NULL));
+
+        int RandomPosx = GetRand(720);
+        enemys[0]->EnemyMove();
+        enemys[1]->EnemyMove();
+
+        RandomPosx = GetRand(720);
 
 
         PlayerObject(PlayerPos);

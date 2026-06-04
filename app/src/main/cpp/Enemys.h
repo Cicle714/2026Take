@@ -4,9 +4,15 @@
 #define SMARTPHONE2026_2_ENEMYS_H
 
 
-class Enemys {
+class Enemys{
+private:
+    VECTOR myPos = VGet(0,0,0);
 public:
-    VECTOR Pos = VGet(0,0,0);
+    Enemys(VECTOR pos){
+        myPos = pos;
+    };
+    ~Enemys();
+    void EnemyMove();
 };
 
 

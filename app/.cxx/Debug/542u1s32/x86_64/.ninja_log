@@ -1,6 +1,19 @@
 # ninja log v5
-0	854	8016624934607352	CMakeFiles/native-lib.dir/main.cpp.o	d5495d0972b5dcb9
-4	848	8016625844388750	CMakeFiles/native-lib.dir/main.cpp.o	d5495d0972b5dcb9
-848	1012	8016625846009700	C:/Users/student/Documents/2026Take/app/build/intermediates/cxx/Debug/542u1s32/obj/x86_64/libnative-lib.so	81ba74f4181f0981
-3	822	8016626733908919	CMakeFiles/native-lib.dir/main.cpp.o	d5495d0972b5dcb9
-823	977	8016626735238587	C:/Users/student/Documents/2026Take/app/build/intermediates/cxx/Debug/542u1s32/obj/x86_64/libnative-lib.so	81ba74f4181f0981
+4	750	8022701312765029	CMakeFiles/native-lib.dir/main.cpp.o	d5495d0972b5dcb9
+796	925	8022699152431303	C:/Users/student/Documents/2026Take/app/build/intermediates/cxx/Debug/542u1s32/obj/x86_64/libnative-lib.so	81ba74f4181f0981
+3	78	8022702989483617	CMakeFiles/native-lib.dir/Enemys.cpp.o	f0a4c0b5c854616
+79	206	8022702990475022	C:/Users/student/Documents/2026Take/app/build/intermediates/cxx/Debug/542u1s32/obj/x86_64/libnative-lib.so	72f14e47ff85ed51
+4	93	8022703765780374	CMakeFiles/native-lib.dir/Enemys.cpp.o	f0a4c0b5c854616
+8	762	8022703772393407	CMakeFiles/native-lib.dir/main.cpp.o	d5495d0972b5dcb9
+762	884	8022703773420601	C:/Users/student/Documents/2026Take/app/build/intermediates/cxx/Debug/542u1s32/obj/x86_64/libnative-lib.so	72f14e47ff85ed51
+4	102	8022703948747775	CMakeFiles/native-lib.dir/Enemys.cpp.o	f0a4c0b5c854616
+8	927	8022703956936494	CMakeFiles/native-lib.dir/main.cpp.o	d5495d0972b5dcb9
+927	1098	8022703958381671	C:/Users/student/Documents/2026Take/app/build/intermediates/cxx/Debug/542u1s32/obj/x86_64/libnative-lib.so	72f14e47ff85ed51
+4	793	8022708068593004	CMakeFiles/native-lib.dir/main.cpp.o	d5495d0972b5dcb9
+794	916	8022708069615558	C:/Users/student/Documents/2026Take/app/build/intermediates/cxx/Debug/542u1s32/obj/x86_64/libnative-lib.so	72f14e47ff85ed51
+3	764	8022708357511834	CMakeFiles/native-lib.dir/main.cpp.o	d5495d0972b5dcb9
+764	884	8022708358518370	C:/Users/student/Documents/2026Take/app/build/intermediates/cxx/Debug/542u1s32/obj/x86_64/libnative-lib.so	72f14e47ff85ed51
+3	772	8022708634226599	CMakeFiles/native-lib.dir/main.cpp.o	d5495d0972b5dcb9
+773	892	8022708635239116	C:/Users/student/Documents/2026Take/app/build/intermediates/cxx/Debug/542u1s32/obj/x86_64/libnative-lib.so	72f14e47ff85ed51
+3	762	8022708898337999	CMakeFiles/native-lib.dir/main.cpp.o	d5495d0972b5dcb9
+763	888	8022708899389807	C:/Users/student/Documents/2026Take/app/build/intermediates/cxx/Debug/542u1s32/obj/x86_64/libnative-lib.so	72f14e47ff85ed51
